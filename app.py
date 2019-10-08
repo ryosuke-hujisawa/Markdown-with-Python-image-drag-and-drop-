@@ -12,15 +12,15 @@ class home:
                 return open("input.html")
 
 
-class upload:
+class upload_blog:
         @cherrypy.expose
         @cherrypy.tools.allow(methods=['POST'])
         # def index(self, var=None, **params):
-        def upload(self, myFile):
-            upload_path = os.path.normpath('./download')
-            upload_file = os.path.join(upload_path, myFile.filename)
+        def upload_blog(self, myFile):
+            upload_blog_path = os.path.normpath('./download')
+            upload_blog_file = os.path.join(upload_blog_path, myFile.filename)
             size = 0
-            with open(upload_file, 'wb') as out:
+            with open(upload_blog_file, 'wb') as out:
                 while True:
                     data = myFile.file.read(8192)
                     if not data:
@@ -62,7 +62,7 @@ class upload:
 # ----------ルーティング実行
 d = cherrypy.dispatch.RoutesDispatcher()
 d.connect('home', '/', controller=home(), action='home')
-d.connect('upload', '/upload', controller=upload(), action='upload')
+d.connect('upload_blog', '/upload_blog', controller=upload_blog(), action='upload_blog')
 
 
 

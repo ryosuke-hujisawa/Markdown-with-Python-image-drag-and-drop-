@@ -115,7 +115,7 @@
     /**
      * URL where the file will be send
      */
-    uploadUrl: '/upload',
+    uploadUrl: '/upload_blog',
 
     /**
      * Which method will be used to send the file to the upload URL
